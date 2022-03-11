@@ -1,0 +1,22 @@
+{
+  "name": "deletor",
+  "version": "1.0.0",
+  "description": "Repository per eliminare un server Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsaccoGit/Deletor.git"
+  },
+  "author": "Cappella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsaccoGit/Deletor/issues"
+  },
+  "homepage": "https://github.com/IsaccoGit/Deletor#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
