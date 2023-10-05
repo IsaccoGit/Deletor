@@ -1,7 +1,7 @@
 # DELETOR
 Repository per eliminare un server Discord
 # CREDITI
-Crediti: cappella_smegma#4457, contettatemi per problemi
+Crediti: cappella_smegma#4457
 # ATTENZIONE 
 Non mi assumo responsabilità per il vostro utilizzo del codice
 # UTILIZZO
